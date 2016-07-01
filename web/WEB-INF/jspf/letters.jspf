@@ -1,0 +1,20 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="letters">
+    <jsp:useBean id="letterList" class="beans.LetterList" scope="application"/>
+    <%String searchLetter = null;
+    if(request.getParameter("letter")!=null){
+        searchLetter = request.getParameter("letter");
+        session.setAttribute("letter", searchLetter);
+} else if(session.getAttribute("letter")!=null){
+    searchLetter = session.getAttribute("letter").toString();
+}
+    char[] russianLetters = letterList.getRussianLetters();
+    for (int i = 0; i < russianLetters.length; i++){
+        if(searchLetter!=null && searchLetter.toUpperCase().charAt(0)==russianLetters[i]){%>
+        <a href="books.jsp?letter=<%=russianLetters[i]%>" style="color: red"><%=russianLetters[i]%></a>
+        <%}else{%>
+        <a href="books.jsp?letter=<%=russianLetters[i]%>"><%=russianLetters[i]%></a>
+    <%}
+    }%>
+</div>

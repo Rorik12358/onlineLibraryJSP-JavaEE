@@ -1,0 +1,59 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>main</title>
+        <link rel="stylesheet" type="text/css" href="../css/styleForMain.css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
+    </head>
+    <% request.setCharacterEncoding("UTF-8");
+    Object searchOption;
+    if(request.getParameter("search_option")!=null){
+        searchOption = request.getParameter("search_option");
+    }else{
+        searchOption=session.getAttribute("search_option");
+    }
+    String selected1 = "";
+    String selected2 = "";
+    if(searchOption!=null && searchOption.equals("Название")){
+        selected1 = "selected";
+    }
+    if(searchOption!=null && searchOption.equals("Автор")){
+        selected2 = "selected";
+    }
+    String searchString = "";
+    if(request.getParameter("search_string")!=null){
+        searchString = request.getParameter("search_string");
+        session.setAttribute("search_string", searchString);
+    } else if (session.getAttribute("search_string")!=null){
+        searchString = (String)session.getAttribute("search_string");
+    } else {
+        session.setAttribute("search_string", searchString);
+    }
+    if (request.getParameter("user_name")!=null){
+        session.setAttribute("user_name", request.getParameter("user_name"));
+    }
+    %>
+    <body>
+        <header>
+            <img src="../images/Library-Logo.png" alt="Library Logo">
+            <a id="exit" href="<%=request.getContextPath()%>/index.jsp">Выйти</a>
+            <h1>Онлайн библиотека"JavaLib"</h1>
+            <p>Добро пожаловать <%=session.getAttribute("user_name")%>!</p>
+        </header>
+        <div class="content">
+            <div class="serch">
+                <form class="serchForm" name="serchForm" method="GET" action="books.jsp">
+                    <img src="../images/Zoom_SH.png" alt="serch image">
+                    <input type="text" name="search_string" value="<%=searchString%>" id="textArea">
+                    <input type="submit" value="Search" id="btn">
+                    <select name="search_option">
+                        <option <%=selected1%>>Название</option>
+                        <option <%=selected2%>>Автор</option>
+                    </select>
+                </form> <!-- close serchForm-->
+            </div> <!-- close search-->
+            <div class="row">
+

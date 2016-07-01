@@ -1,0 +1,150 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25.06.2016, 0:04:00
+    Author     : R2-D2
+*/
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 10px;
+}
+header img {
+    width: 170px;
+    height: 150px;
+}
+header #exit {
+    float: right;
+    
+}
+header h1 {
+    font-family: 'Lora', serif;
+    color: #275BF5;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    display: inline;
+    position: relative;
+    bottom: 75px;
+    padding: 0px 15px;
+    border-radius: 5px;
+}
+header p {
+    font-family: 'Lora', serif;
+    color: #275BF5;
+    text-align: center;
+    font-size: 1.25em;
+}
+.content .serch form {
+    padding: 10px;
+    background: #AEC2FC;
+    border-radius: 5px;
+}
+.content .serch form input{
+    margin:5px;
+}
+#btn, #exit {
+    background: #3A9BFC;
+    color: white;
+    border-radius: 10px;
+    padding: 3px 15px;
+    border: 2px solid #3A9BFC;
+    border-style: outset;
+   }
+#btn:hover, #exit:hover {
+    cursor: pointer;
+    background: -webkit-linear-gradient(#3A9BFC, #6ED7FA);
+   }
+#btn:active {
+    border-style: inset;   
+   }
+#textArea {
+    width: 85%;
+}
+.content .serch img {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+}
+.content .row .genres {
+    width: 30%;
+}
+.content .row .books {
+    width: 70%;
+}
+.content .row .books, .genres {
+    padding: 10px;
+    float: left;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: #3A9BFC;
+}
+.content .row .books .book{
+    float: left;
+    width: 33%;
+}
+.content .row .books .book .title p {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #275BF5;
+}
+.content .row .books .cover_image img{
+    width: 250px;
+    height: 400px;
+}
+.letters {
+    float: left;
+    width: 70%;
+    margin: 31.280px 0px;
+}
+.letters a {
+    margin: 0px 0.6%;    
+}
+.pdf_viewer {
+    width: 100%;
+    height: 100%;
+}
+@media (max-width:1599px){
+    #textArea {
+        width: 80%;
+    }
+}
+@media(max-width: 1250px){
+    .letters a {
+        margin: 0px 0.2%;
+    }    
+}
+@media (max-width:1216px){
+    #textArea50 {
+        width: 70%;
+    }
+    .content .row .books .book{
+        width: 50%;
+    }
+    #textArea {
+        width: 90%;
+    }
+}
+@media (max-width:850px){
+    .content .row .books .book{
+        width: 100%;
+    }
+}
+@media (max-width:777px) {
+    header img {
+        display: none;
+    }
+    header h1 {
+        font-size: 5vw;
+        position: static;
+        display: block;
+    }    
+}

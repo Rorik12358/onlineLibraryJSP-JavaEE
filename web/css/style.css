@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21.06.2016, 10:07:16
+    Author     : R2-D2
+*/
+* {
+	box-sizing: border-box;
+}
+.logo {
+	height: 150px;
+	width: 200px;
+	background-image: url("../images/librLogo.jpg");
+	background-size: cover;
+	margin: 0 auto;
+}
+p {
+	text-align: justify;
+}
+form {
+	padding: 5px;
+	border: 1px solid black;
+	width: 400px;
+	margin: 0 auto;
+}
+#button {
+    float: right;
+}
+form h2 {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+form span {
+	margin: 3px;
+}
+form input {
+	margin: 3px;
+}
+form input:nth-child(3) {
+	margin-left: 25px;
+}
+body {
+	height: 70%;
+	width: 70%;
+	margin: 10px auto;
+}
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 0px;
+    width: 100%;
+}/*
+*/footer h3 {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
